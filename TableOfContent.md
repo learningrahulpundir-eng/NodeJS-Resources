@@ -1,39 +1,39 @@
 # Node.js Learning Roadmap
 
-## Section 1: Introduction & Setup
-- What is Node.js and why use it?
+## Section 1: Introduction and Setup
+- What Node.js is and why it is used
 - Node.js vs browser JavaScript
 - Installing Node.js and npm
 - Running your first Node.js program
-- Understanding the REPL (Read Eval Print Loop)
+- Understanding the REPL
 - Node.js architecture: event loop and single thread
 - Blocking vs non-blocking code
 
 ## Section 2: Core Concepts
 - Modules in Node.js (CommonJS vs ES Modules)
 - Creating and exporting modules
-- Built-in module overview
+- Built-in modules overview
 - Understanding `require()` and `import`
-- Global objects: `__dirname`, `__filename`
+- Global objects such as `__dirname` and `__filename`
 - The `process` object
 
-## Section 3: File System & OS
-- Working with the file system (`fs` module)
+## Section 3: File System and OS
+- Working with the file system using the `fs` module
 - Reading and writing files
-- Async vs sync FS operations
+- Async vs sync file system operations
 - Streams and buffers
 - OS module basics
 - Path module usage
 
-## Section 4: Events & Async Programming
+## Section 4: Events and Async Programming
 - `EventEmitter` in Node.js
 - Creating custom events
 - Callbacks in Node.js
 - Promises explained
-- `async` / `await`
+- `async`/`await`
 - Error handling in asynchronous code
 
-## Section 5: HTTP & Building Servers
+## Section 5: HTTP and Building Servers
 - Creating a basic HTTP server
 - Handling requests and responses
 - Serving HTML, JSON, and files
@@ -60,7 +60,8 @@
 - Validation with `Joi` or `express-validator`
 
 ## Section 8: Databases
-### MongoDB + Mongoose
+
+### MongoDB and Mongoose
 - Introduction to databases
 - MongoDB basics
 - Connecting Node.js with MongoDB
@@ -69,39 +70,39 @@
 - Relationships in MongoDB
 - Aggregation basics
 
-### SQL (Optional but valuable)
-- Intro to SQL (MySQL / PostgreSQL)
+### SQL (Optional but Valuable)
+- Introduction to SQL (MySQL or PostgreSQL)
 - Connecting Node.js with SQL
 - Performing database queries
 
-## Section 9: Authentication & Security
+## Section 9: Authentication and Security
 - Authentication vs authorization
 - Password hashing with `bcrypt`
 - JSON Web Tokens (JWT)
 - Login and signup APIs
 - Protecting routes
 - Role-based access control
-- Security best practices: `helmet`, `cors`
+- Security best practices using `helmet` and `cors`
 
 ## Section 10: Advanced Topics
 - Streams in depth
-- `cluster` module and scaling Node apps
+- The `cluster` module and scaling Node apps
 - Worker threads
 - Caching basics with Redis
 - Rate limiting
 - File uploads with Multer
 - Real-time apps with WebSockets and Socket.io
 
-## Section 11: Testing & Debugging
+## Section 11: Testing and Debugging
 - Unit testing with Jest
 - API testing with Supertest
 - Debugging Node applications
 - Handling production errors
 
-## Section 12: Deployment & DevOps
+## Section 12: Deployment and DevOps
 - Preparing applications for production
 - Environment configuration
-- Deployment options: Render, Railway, Vercel, AWS, DigitalOcean
+- Deployment options such as Render, Railway, Vercel, AWS, and DigitalOcean
 - Using PM2 as a process manager
 - CI/CD basics
 
@@ -118,7 +119,7 @@
 - Caching strategies
 - Load testing basics
 
-## Section 15: Bonus & Career Guidance
+## Section 15: Bonus and Career Guidance
 - Node.js interview questions
 - Resume and portfolio tips
 - Backend developer roadmap
