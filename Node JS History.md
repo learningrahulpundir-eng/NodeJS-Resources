@@ -2,6 +2,12 @@
 
 Node.js has grown from a simple runtime into one of the most popular platforms for building fast and scalable applications.
 
+## Why Node.js Was Created
+- Node.js was created to solve the problem of handling many connections at the same time.
+- Traditional web servers used a blocking model, which made them slow for real-time apps.
+- Node.js used an event-driven, non-blocking architecture to handle many requests efficiently.
+- It made it easier to build fast, scalable applications such as chat apps and APIs.
+
 ## Major Milestones
 
 ### 2009 - Birth of Node.js
