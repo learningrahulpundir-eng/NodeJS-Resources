@@ -1,40 +1,30 @@
-Node.js uses a single-threaded event loop to handle multiple requests efficiently by using async operations and a thread pool for heavy tasks.
-
 Node.js Architecture – Simple Explanation
-👉 Node.js works on a single-threaded event-driven model using an Event Loop.
 
-🔹 1. Request Flow
+Node.js uses a single-threaded, event-driven design built around an Event Loop.
 
-Client sends a request
-Request goes into the Event Queue
-Event Loop picks requests one by one
+1. Request Flow
+- The client sends a request.
+- The request enters the Event Queue.
+- The Event Loop processes queued events one at a time.
 
+2. Event Loop – The Controller
+- The Event Loop decides how to handle each request.
+- It checks whether the work is blocking or non-blocking.
 
-🔹 2. Event Loop – The Brain
+3. Non-Blocking Operations (Fast ✅)
+- These go to asynchronous APIs for OS, network, or timer work.
+- The Event Loop does not wait for the task to finish.
+- When the task completes, a callback or promise resolves.
+- Then the response is sent back to the client.
+- Examples: API calls, database queries, timers.
 
-The Event Loop decides how to process each request
-It checks:
-👉 Is it blocking or non-blocking?
+4. Blocking Operations (Heavy ⚙️)
+- These go to the thread pool.
+- Worker threads execute the task without blocking the Event Loop.
+- When finished, the result returns to the Event Loop.
+- Then the response is sent to the client.
+- Examples: file system access, encryption, CPU-intensive work.
 
-
-🔹 3. Non-Blocking Operations (Fast ✅)
-
-Sent to Async APIs (OS / Network / Timers)
-Event Loop does NOT wait
-When task completes → comes back via callback
-Then response is sent to client
-
-👉 Example: API calls, database queries, timers
-
-🔹 4. Blocking Operations (Heavy ⚙️)
-
-Sent to Thread Pool
-Worker threads handle the task
-Result comes back to Event Loop
-Then response is sent to client
-
-👉 Example: File system, encryption, CPU-heavy tasks
-
-🔹 5. Final Response
-
-Event Loop sends the response back to the client
+5. Final Response
+- The Event Loop collects completed work and sends responses to clients.
+- This design keeps Node.js fast and efficient for many concurrent connections.
