@@ -41,6 +41,11 @@ Returns the current working directory.
 console.log(process.cwd());
 ```
 
+### What is the difference between `__dirname` and `process.cwd()`?
+- `__dirname` → Current file directory
+- `process.cwd()` → Directory where the command was executed
+
+
 ---
 
 ## `process.env`
@@ -57,7 +62,15 @@ Example:
 const PORT = process.env.PORT || 3000;
 ```
 
+1. npm install cross-env
+2. console.log(node.env.Node_Env)
+2. "scripts": {
+  "start:dev": "cross-env NODE_ENV=development node index.js",
+  "start:prod": "cross-env NODE_ENV=production node index.js"
+}
+
 ---
+
 
 ## `process.pid`
 
