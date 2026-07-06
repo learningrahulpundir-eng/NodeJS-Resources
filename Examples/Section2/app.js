@@ -17,12 +17,13 @@
 // console.log(`The result of addition is: ${result}`);
 
 // CachedDemo.js example
-import {add} from './CachedDemo.js';
-import {multiply } from './CachedDemo.js';
-const result = add(5, 10);
-console.log(`The result of addition is: ${result}`);
-const product = multiply(5, 10);
-console.log(`The result of multiplication is: ${product}`);
+// import {add} from './CachedDemo.js';
+// import {multiply } from './CachedDemo.js';
+// const result = add(5, 10);
+// console.log(`The result of addition is: ${result}`);
+// const product = multiply(5, 10);
+// console.log(`The result of multiplication is: ${product}`);
+
 
 
 

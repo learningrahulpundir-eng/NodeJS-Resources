@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon Nodemonapp.js"
+    "start": "nodemon Nodemonapp.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon Section2/ProcessDemo.js",
+    "start:prod": "cross-env NODE_ENV=production nodemon Section2/ProcessDemo.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^10.1.0",
     "express": "^5.2.1"
   },
   "devDependencies": {
