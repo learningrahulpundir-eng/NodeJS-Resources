@@ -1,4 +1,4 @@
-Callbacks in Node.js
+### Callbacks in Node.js
 
 Callbacks are one of the fundamental concepts of Node.js. A callback is simply a function passed as an argument to another function, which gets executed later when a task is completed.
 
@@ -9,20 +9,25 @@ Why Callbacks?
 Imagine reading a large file.
 
 Synchronous Approach
+```javascript
 const data = fs.readFileSync('data.txt');
 
 console.log(data.toString());
 
 console.log('Finished');
+```
 
 Node.js waits until the file is completely read.
 
 Asynchronous Approach
+
+```javascript
 fs.readFile('data.txt', (err, data) => {
     console.log(data.toString());
 });
 
 console.log('Finished');
+```
 Output
 Finished
 File Content...
@@ -30,6 +35,8 @@ File Content...
 Node.js doesn't wait for the file operation to finish. Instead, it continues execution and invokes the callback when the file is ready.
 
 Basic Callback Example
+
+```javascript
 function greet(name, callback) {
     console.log(`Hello ${name}`);
 
@@ -41,6 +48,8 @@ function sayBye() {
 }
 
 greet('Rahul', sayBye);
+
+```
 Output
 Hello Rahul
 Goodbye!
@@ -51,13 +60,19 @@ sayBye is the callback.
 It is passed to greet().
 It executes after greeting.
 Anonymous Callback Function
+
+```javascript
 greet('Rahul', () => {
     console.log('Welcome to Node.js');
 });
+```
 Output
 Hello Rahul
 Welcome to Node.js
 Real-World Example: Reading a File
+
+
+```javascript
 const fs = require('fs');
 
 fs.readFile('users.txt', 'utf8', (err, data) => {
@@ -69,6 +84,8 @@ fs.readFile('users.txt', 'utf8', (err, data) => {
 
     console.log(data);
 });
+
+```
 Flow
 Start
   │
@@ -89,11 +106,13 @@ This is how Node.js handles I/O efficiently.
 Error-First Callback Pattern
 
 Node.js follows a standard callback convention:
-
+```javascript
 function callback(error, result) {
     // handle result
 }
+```
 Example
+```javascript
 fs.readFile('data.txt', 'utf8', (err, data) => {
 
     if (err) {
@@ -103,6 +122,7 @@ fs.readFile('data.txt', 'utf8', (err, data) => {
 
     console.log(data);
 });
+```
 
 The first parameter is always the error.
 
@@ -112,6 +132,7 @@ If no error occurs:
 
 err === null
 Creating Your Own Callback Function
+```javascript
 function fetchUser(id, callback) {
 
     const user = {
@@ -133,7 +154,7 @@ fetchUser(1, (err, user) => {
 });
 Output
 { id: 1, name: 'Rahul' }
-Simulating Async Operations
+//Simulating Async Operations
 function getData(callback) {
 
     setTimeout(() => {
@@ -148,6 +169,8 @@ getData((result) => {
 });
 
 console.log('Loading...');
+
+```
 Output
 Loading...
 Data received
@@ -155,6 +178,7 @@ Data received
 The callback executes after 2 seconds.
 
 Callback in HTTP Server
+```javascript
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -165,7 +189,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000);
-
+```
 The function passed to createServer() is a callback.
 
 Whenever a request arrives, Node.js executes that callback.
@@ -173,7 +197,7 @@ Whenever a request arrives, Node.js executes that callback.
 Callback in Array Methods
 
 Callbacks are not limited to async operations.
-
+```javascript
 forEach()
 const numbers = [1, 2, 3];
 
@@ -186,12 +210,13 @@ const result = numbers.map((num) => {
 });
 
 console.log(result);
+```
 Output
 [2, 4, 6]
 Callback Hell
 
 One of the biggest problems with callbacks is nesting.
-
+```javascript
 getUser(userId, (user) => {
 
     getOrders(user.id, (orders) => {
@@ -206,8 +231,8 @@ getUser(userId, (user) => {
         });
     });
 });
-
-This creates a pyramid-like structure.
+```
+//This creates a pyramid-like structure.
 
 getUser()
  └── getOrders()
@@ -225,14 +250,14 @@ Deep nesting
 Solution: Promises
 
 Instead of callbacks:
-
+```javascript
 getUser(userId)
     .then(user => getOrders(user.id))
     .then(orders => getPayment(orders[0].id))
     .then(payment => getInvoice(payment.id))
     .then(invoice => console.log(invoice))
     .catch(err => console.log(err));
-Better Solution: Async/Await
+// Better Solution: Async/Await
 async function processOrder() {
 
     try {
@@ -252,6 +277,7 @@ async function processOrder() {
         console.log(err);
     }
 }
+```
 
 This is much cleaner and easier to understand.
 
@@ -268,10 +294,11 @@ timers	setTimeout, setInterval
 streams	Data processing
 
 Example:
-
+```javascript
 setTimeout(() => {
     console.log('Executed');
 }, 1000);
+```
 
 The function passed to setTimeout() is a callback.
 
