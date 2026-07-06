@@ -229,8 +229,54 @@ emitter.emit('task');
 
 ---
 
-**Suggested video title:** "Node.js EventEmitter Explained | emit(), on(), once()"
+### Real Example
 
-**Thumbnail text:**
+Scenario 1: E-Commerce Order System
 
-EVENT EMITTER — emit() • on() • once()
+Imagine a customer places an order.
+
+Without EventEmitter:
+```javascript
+placeOrder(order) {
+    saveOrder(order);
+    sendEmail(order);
+    updateInventory(order);
+    createInvoice(order);
+    notifyWarehouse(order);
+}
+```
+
+This creates tight coupling because placeOrder() must know every action.
+
+With EventEmitter:
+```javascript
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+emitter.on('orderPlaced', sendEmail);
+emitter.on('orderPlaced', updateInventory);
+emitter.on('orderPlaced', createInvoice);
+emitter.on('orderPlaced', notifyWarehouse);
+
+function placeOrder(order) {
+    saveOrder(order);
+
+    emitter.emit('orderPlaced', order);
+}
+```
+
+Flow
+Customer Places Order
+          │
+          ▼
+     orderPlaced
+          │
+    ┌─────┼─────┬─────────┐
+    ▼     ▼     ▼         ▼
+ Email Inventory Invoice Warehouse
+
+Now adding a new feature becomes easy:
+
+emitter.on('orderPlaced', sendSMS);
+
+No changes needed in placeOrder().
