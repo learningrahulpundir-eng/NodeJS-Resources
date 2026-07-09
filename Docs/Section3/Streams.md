@@ -7,9 +7,9 @@
   Duplex: Is is used for both
   Transfrom: It is used to transform the data in both readable and writable stream.
 
-// Pipe: Pipe is used to combine readable stream to the writeable stream without impacting the data flow.
+#### Pipe: Pipe is used to combine readable stream to the writeable stream without impacting the data flow.
 
-// Example: Readable stream
+### Example: Readable stream
 
 ```javascript
 const fs = require("fs");
@@ -31,7 +31,7 @@ stream.on("error", (err) => {
 
 ```
 
-// Example: Writable Stream
+### Example: Writable Stream
 
 ```javascript
 const fs = require("fs");
@@ -52,7 +52,7 @@ stream.on("error", (err) => {
 });
 ```
 
-// Example Duplex Stream
+### Example Duplex Stream
 
 ```javascript
 const { Duplex } = require('stream');
@@ -80,8 +80,7 @@ duplex.write("Node.js");
 duplex.end();
 
 ```
-
-// Example : Transform Stream
+### Example : Transform Stream
 
 ```javascript
 const { Transform } = require('stream');
@@ -101,7 +100,7 @@ upperCase.write("world");
 upperCase.end();
 ```
 
-Example: Basic Piping
+### Example: Basic Piping
 
 ```javascript
 const fs = require("fs");
