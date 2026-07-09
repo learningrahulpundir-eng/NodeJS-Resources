@@ -39,7 +39,7 @@ const buffer5c = Buffer.concat([buffer5a, buffer5b]);
 console.log(buffer5c.toString()); // Output: Hello, World!
 ```
 
-// Example - 6: Slicing a buffer
+### Example - 6: Slicing a buffer
 ```javascript
 const buffer6 = Buffer.from('Hello, World!');
 const buffer6Slice = buffer6.slice(0, 5);

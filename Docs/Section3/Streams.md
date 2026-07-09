@@ -112,7 +112,7 @@ readStream.pipe(writeStream);
 ```
 
 
-Example: Channing of Piping
+### Example: Channing of Piping
 
 ```javascript
 const fs = require("fs");

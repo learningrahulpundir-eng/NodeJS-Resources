@@ -140,6 +140,46 @@ fs.rmdir('demoDir1', (err) => {
 });
 ```
 
+## Example 5: Create a directory
+
+### Synchronous way
+
+```javascript
+fs.mkdirSync('demoDir');
+console.log("Directory created successfully");
+```
+
+### Asynchronous way
+
+```javascript
+fs.mkdir('demoDir1', (err) => {
+    if (err) {
+        console.log(err);
+    }
+    console.log("Directory created successfully in Asynchronous way");
+});
+```
+
+## Example 6: Delete a directory
+
+### Synchronous way
+
+```javascript
+fs.rmdirSync('demoDir');
+console.log("Directory deleted successfully");
+```
+
+### Asynchronous way
+
+```javascript
+fs.rmdir('demoDir1', (err) => {
+    if (err) {
+        console.log(err);
+    }
+    console.log("Directory deleted successfully in Asynchronous way");
+});
+```
+
 ## Summary
 
 The fs module is one of the most useful built-in modules in Node.js for handling files and folders efficiently.
