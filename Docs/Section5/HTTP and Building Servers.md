@@ -4,10 +4,12 @@ HTTP (HyperText Transfer Protocol) is the protocol used for communication betwee
 
 Whenever you:
 
+```txt
 Open a website
 Call an API
 Submit a form
 Download a file
+```
 
 your browser sends an HTTP Request, and the server returns an HTTP Response.
 
@@ -32,17 +34,19 @@ IIS
 
 In this course, we'll build our own web server using Node.js.
 
-Node.js HTTP Module
+### Node.js HTTP Module
 
 Node.js provides a built-in module called http.
 
 This module allows you to:
 
+```txt
 Create HTTP servers
 Receive requests
 Send responses
 Handle different URLs
 Build APIs
+```
 
 Since it is built into Node.js, no installation is required.
 
@@ -103,22 +107,29 @@ Contains information about the incoming request.
 
 Examples:
 
+```txt
 URL
 HTTP Method
 Headers
 Query Parameters
 Response (res)
-
+```txt
+.
 Used to send data back to the client.
+
 
 Examples:
 
+```txt
 HTML
 JSON
 Text
 Files
 Status Codes
+```
+
 #### Step 4
+
 
 Send a response.
 
