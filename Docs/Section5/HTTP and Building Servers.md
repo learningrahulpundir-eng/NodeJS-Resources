@@ -13,8 +13,10 @@ your browser sends an HTTP Request, and the server returns an HTTP Response.
 
 Example:
 
+```text
 Browser  ---------- HTTP Request ---------> Server
 Browser <--------- HTTP Response ---------- Server
+```
 
 
 ### What is a Web Server?
@@ -181,9 +183,11 @@ Wait for incoming requests.
 Execute the callback whenever a request arrives.
 
 ### Common Ports
+```txt
 Port	Usage
 3000	Local development
 5000	APIs
 8080	Alternative HTTP server
 80	Default HTTP
 443	HTTPS
+```
